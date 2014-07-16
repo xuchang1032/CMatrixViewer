@@ -1,0 +1,26 @@
+// AddIn.idl : IDL source for AddIn
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AddIn.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(365C93C6-38A9-496B-A87C-6899F6967FD4),
+	version(1.0),
+	helpstring("CMatrixViewer 1.0 Type Library")
+]
+library CMatrixViewerLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(4968807C-D9FD-4F49-A93F-2C8667D2CD16),
+		helpstring("Connect Class")
+	]
+	coclass Connect
+	{
+		[default] interface IUnknown;
+	};
+};

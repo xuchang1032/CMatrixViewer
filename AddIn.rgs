@@ -1,0 +1,54 @@
+HKCR
+{
+	CMatrixViewer.Connect.1 = s 'Connect Class'
+	{
+		CLSID = s '{4968807C-D9FD-4F49-A93F-2C8667D2CD16}'
+	}
+	CMatrixViewer.Connect = s 'Connect Class'
+	{
+		CLSID = s '{4968807C-D9FD-4F49-A93F-2C8667D2CD16}'
+		CurVer = s 'CMatrixViewer.Connect.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove '{4968807C-D9FD-4F49-A93F-2C8667D2CD16}' = s 'Connect Class'
+		{
+			ProgID = s 'CMatrixViewer.Connect.1'
+			VersionIndependentProgID = s 'CMatrixViewer.Connect'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{365C93C6-38A9-496B-A87C-6899F6967FD4}'
+		}
+	}
+}
+
+HKCU
+{
+	NoRemove 'SOFTWARE'
+	{
+		NoRemove 'Microsoft'
+		{
+			NoRemove 'VisualStudio'
+			{
+				NoRemove '9.0'
+				{
+					NoRemove 'AddIns'
+					{
+						ForceRemove 'CMatrixViewer.Connect'
+						{
+							val LoadBehavior = d 0
+							val CommandLineSafe = d 0
+							val CommandPreload = d 1
+							val FriendlyName = s 'CMatrixViewer'
+							val Description = s 'Show CMatrix<T> In Output Window'
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

@@ -17,3 +17,9 @@ int KaTest(double Inno[], int n)
 
 }
 
+void main(int argc, char *argv)
+{
+	double Inno[] = {1.25, 10., 19.1, 0.291};
+	int kaRes = KaTest(Inno, 4);
+}
+
